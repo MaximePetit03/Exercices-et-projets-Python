@@ -20,10 +20,9 @@ liste_de_mots = [
     "clavier", "ecran", "souris", "bureau", "lampe", "tasse", "cafe", 
     "pomme", "ecole", "jardin", "bateau"
 ]
-# Génère un mot aléatoire parmi la liste de mots 
 mot_choisi = random.choice(liste_de_mots)
 
-pendu = list(mot_choisi)# Récupère le mot aléatoire
+pendu = list(mot_choisi) # Récupère le mot aléatoire
 essais_restant = 10 # Nombres d'essais pour gagner
 
 mot_trouve = False
@@ -52,19 +51,23 @@ while essais_restant > 0 and mot_trouve == False:
     # On récupère la lettre, et .lower() force les minuscules pour éviter les erreurs
     guess = input("Donne une lettre : ").lower()
 
-    # On enregistre la lettre dans l'historique des tentatives
-    lettres_dites.append(guess)
-    
+    while len(guess) != 1 or not guess.isalpha():
+        print("Erreur : Tu dois entrer une seule lettre (pas de chiffres ni de mots).")
+        guess = input("Donne une lettre : ").lower()
+
     # La lettre a déjà été trouvée précédemment
-    if guess in lettres_trouvees:
+    if guess in lettres_dites:
         print(f"Tu as déjà proposé la lettre '{guess}'. Essaie une autre.")
         continue # On remonte au début du 'while' sans exécuter la suite
-        
+
+    # On enregistre la lettre dans l'historique des tentatives
+    lettres_dites.append(guess)
+
     # La lettre est correcte et n'avait pas encore été trouvée
-    elif guess in pendu:
+    if guess in pendu:
         print(f"{guess} est dans le mot ")
         lettres_trouvees.append(guess) # On l'ajoute aux bonnes réponses
-        
+    
     # La lettre n'est pas du tout dans le mot
     else:
         essais_restant -= 1 # On retire un essai
