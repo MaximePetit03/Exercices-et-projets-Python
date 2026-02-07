@@ -65,13 +65,16 @@ while essais_restant > 0 and mot_trouve == False:
 
     # La lettre est correcte et n'avait pas encore été trouvée
     if guess in pendu:
-        print(f"{guess} est dans le mot ")
         lettres_trouvees.append(guess) # On l'ajoute aux bonnes réponses
     
     # La lettre n'est pas du tout dans le mot
     else:
         essais_restant -= 1 # On retire un essai
-        print(f"Faux ! Il te reste {essais_restant} tentatives")
+        if essais_restant == 0:
+            print(f"Perdu, le mot était {''.join(pendu)}")
+        else:
+            print(f"Faux ! Il te reste {essais_restant} tentatives")
+
     
     # On part du principe que le joueur a gagné
     gagne = True 
@@ -86,6 +89,5 @@ while essais_restant > 0 and mot_trouve == False:
         mot_trouve = True
 
 if mot_trouve:
-    print("Félicitations, tu as gagné !")
-else:
-    print(f"Perdu, le mot était {''.join(pendu)}")
+    print(f"\nLe mot est bien : {''.join(pendu)}")
+    print(f"Félicitations, tu as gagné en {essais_restant} essais")
