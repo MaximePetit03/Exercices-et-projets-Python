@@ -11,23 +11,40 @@ class JeuPendu(ctk.CTk):
         super().__init__()
 
         self.liste_de_mots = [
+            # ANIMAUX
             "lion", "tigre", "elephant", "girafe", "zebre", "chien", "chat", "lapin", 
             "oiseau", "poisson", "serpent", "tortue", "grenouille", "loup", "ours", 
             "renard", "singe", "cheval", "vache", "cochon", "abeille", "requin", 
             "dauphin", "baleine", "fourmi", "canard", "mouton", "chevre", "souris", 
-            "poule", "aigle", "hibou", "crabe", "crevette",
+            "poule", "aigle", "hibou", "crabe", "crevette", "meduse", "scorpion",
+            "araignee", "papillon", "homard", "pingouin", "panda", "koala", "hamster",
 
+            # VERBES
             "manger", "boire", "dormir", "courir", "marcher", "sauter", "lire", "ecrire", 
             "parler", "ecouter", "regarder", "jouer", "travailler", "chanter", "danser", 
             "penser", "aimer", "donner", "prendre", "aller", "venir", "vouloir", "pouvoir", 
             "chercher", "trouver", "gagner", "perdre", "reussir", "apprendre", "coder", 
-            "aider", "partager", "ouvrir",
+            "aider", "partager", "ouvrir", "fermer", "voyager", "construire", "detruire",
+            "conduire", "cuisiner", "nettoyer", "reparer", "choisir", "attendre",
 
+            # DIVERS
+            "avion", "train", "velo", "camion", "moto", "metro", "gare", "aeroport",
+            "ville", "village", "route", "chemin", "pont", "tunnel", "chateau",
+            "musee", "cinema", "theatre", "hotel", "plage", "desert", "ocean", "ile",
             "table", "chaise", "ordinateur", "livre", "stylo", "cahier", "maison", 
             "voiture", "arbre", "fleur", "soleil", "lune", "ciel", "eau", "feu", 
             "terre", "vent", "montagne", "riviere", "foret", "fenetre", "porte", 
             "clavier", "ecran", "souris", "bureau", "lampe", "tasse", "cafe", 
-            "pomme", "ecole", "jardin", "bateau"
+            "pomme", "ecole", "jardin", "bateau", "miroir", "armoire", "coussin",
+            "canape", "rideau", "valise", "montre", "journal", "bouteille", "assiette",
+            "pain", "fromage", "chocolat", "gateau", "pizza", "pates", "riz", "soupe",
+            "salade", "fruit", "legume", "orange", "banane", "fraise", "citron",
+            "viande", "oeuf", "sucre", "sel", "beurre", "lait", "jus", "the"
+
+            # SCIENCES
+            "planete", "etoile", "galaxie", "comete", "astronaute", "fusee", "telescope",
+            "atome", "molecule", "energie", "lumiere", "gravite", "vitesse", "temps",
+            "espace", "robot", "science", "physique", "chimie", "biologie", "calcul",
         ]
         
         self.mot_choisi = random.choice(self.liste_de_mots)
